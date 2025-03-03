@@ -5,33 +5,33 @@ class Solution(object):
         :type pivot: int
         :rtype: List[int]
         """
-        # count_s, count_e, count_g = 0,0,0
+        count_s, count_e, count_g = 0,0,0
 
-        # for num in nums:
-        #     if num < pivot:
-        #         count_s += 1
-        #     elif num == pivot:
-        #         count_e += 1
-        #     else:
-        #         count_g += 1
+        for num in nums:
+            if num < pivot:
+                count_s += 1
+            elif num == pivot:
+                count_e += 1
+            else:
+                count_g += 1
         
-        # result = [0] * len(nums)
+        result = [0] * len(nums)
 
-        # i, j = 0, count_s  
-        # k = count_s + count_e  
+        i, j = 0, count_s  
+        k = count_s + count_e  
 
-        # for num in nums:
-        #     if num < pivot:
-        #         result[i] = num
-        #         i += 1
-        #     elif num == pivot:
-        #         result[j] = num
-        #         j += 1
-        #     else:
-        #         result[k] = num
-        #         k += 1
+        for num in nums:
+            if num < pivot:
+                result[i] = num
+                i += 1
+            elif num == pivot:
+                result[j] = num
+                j += 1
+            else:
+                result[k] = num
+                k += 1
 
-        # return result
+        return result
 
         # less = []
         # greater = []
@@ -46,19 +46,19 @@ class Solution(object):
         
         # return less + [pivot]*count_p + greater
 
-        less = []
-        equals = []
-        greater = []
+        # less = []
+        # equals = []
+        # greater = []
 
-        for num in nums:
-            if num < pivot:
-                less.append(num)
-            elif num == pivot:
-                equals.append(num)
-            else:
-                greater.append(num)
+        # for num in nums:
+        #     if num < pivot:
+        #         less.append(num)
+        #     elif num == pivot:
+        #         equals.append(num)
+        #     else:
+        #         greater.append(num)
 
-        less.extend(equals)
-        less.extend(greater)
+        # less.extend(equals)
+        # less.extend(greater)
 
-        return less
+        # return less
