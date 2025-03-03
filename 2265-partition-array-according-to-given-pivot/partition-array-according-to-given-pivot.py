@@ -33,15 +33,32 @@ class Solution(object):
 
         # return result
 
+        # less = []
+        # greater = []
+
+        # for num in nums:
+        #     if num < pivot:
+        #         less.append(num)
+        #     elif num > pivot:
+        #         greater.append(num)
+            
+        # count_p = len(nums) - len(less) - len(greater)
+        
+        # return less + [pivot]*count_p + greater
+
         less = []
+        equals = []
         greater = []
 
         for num in nums:
             if num < pivot:
                 less.append(num)
-            elif num > pivot:
+            elif num == pivot:
+                equals.append(num)
+            else:
                 greater.append(num)
-            
-        count_p = len(nums) - len(less) - len(greater)
-        
-        return less + [pivot]*count_p + greater
+
+        less.extend(equals)
+        less.extend(greater)
+
+        return less
