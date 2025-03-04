@@ -16,6 +16,17 @@ class Solution(object):
         # Optimized approach using sets: Sets will give us unique elements and if we minus the 0's then we have unique numbers whose length will the number of operations needed to make all elements to 0 : Time complexity o(n)
         # set(nums): O(n) to create a set,  -{0} O(1) to remove zeros, len(set) O(1)
 
-        return len(set(nums) - {0})
+        #return len(set(nums) - {0})
+
+
+        #Without using extra space, instead of using set we can use hashset
+
+        unique_ele = 0
+        seen = set()
+        for num in nums:
+            if num > 0 and num not in seen:
+                unique_ele += 1
+                seen.add(num)
+        return unique_ele
 
         
