@@ -7,9 +7,9 @@ class Solution(object):
         # find largest power of 3^i <= n 
         i = 0
 
-        while 3**(i+1) <= n:
+        while 3**i <= n:
             i += 1
-        # i -= 1
+        i -= 1
 
         #Greedy to remove largest power available
         while i >= 0:
