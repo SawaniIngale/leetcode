@@ -4,7 +4,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        result = n**2 + (n-1)**2
+        # result = n**2 + (n-1)**2
 
-        return result
+        return n**2 + (n-1)**2
         
