@@ -12,7 +12,7 @@ class Solution(object):
 
         i = 0
         for j in range(1,len(nums)):
-            if nums[j] == nums[j - 1]:
+            if nums[j] == nums[i]:
                 dup += 1
 
             else:
