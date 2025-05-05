@@ -4,16 +4,20 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        matching_brackets = { ')' : '(', '}' : '{', ']' : '['}
+        brackets = {')':'(', '}':'{',']':'['}
+
         stack = []
 
         for char in s:
-            if char in matching_brackets:
-                top_ele = stack.pop() if stack else '#'
+            if char in brackets:
+                top = stack.pop() if stack else '#'
 
-                if matching_brackets[char] != top_ele:
+                if brackets[char] != top:
                     return False
+
             else:
                 stack.append(char)
-            
+
         return not stack
+            
+
