@@ -14,7 +14,6 @@ class Solution(object):
 
         freq = Counter(arr)
         lucky = [value for key,value in freq.items() if key == value]
-        print(lucky)
         
         if lucky:
             return max(lucky)
